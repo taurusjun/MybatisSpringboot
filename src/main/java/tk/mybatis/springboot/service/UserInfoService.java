@@ -64,4 +64,10 @@ public class UserInfoService {
             userInfoMapper.insert(country);
         }
     }
-}
+
+    public UserInfo findByName(String name)
+    {
+        UserInfo us = new UserInfo();
+        us.setUsername(name);
+        return (UserInfo)this.userInfoMapper.selectOne(us);
+    }}
